@@ -12,7 +12,18 @@ app.get('/',function(request,response){
 });
 
 app.get('/users',function(request,response){
-	response.render('users/index')
+	response.render('users/index',{
+		players : [
+			{
+				id:1,
+				name: 'Huy'
+			},
+			{
+				id:2,
+				name: 'Lam'
+			}
+		]
+	});
 });
 
 app.listen(port);
