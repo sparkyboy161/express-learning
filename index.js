@@ -9,4 +9,8 @@ app.get('/',function(request,response){
 	response.render('index')
 });
 
+app.get('/users',function(request,response){
+	response.render('users/index')
+});
+
 app.listen(port);
