@@ -6,7 +6,9 @@ var port = 3000;
 app.set("view engine", "pug");
 
 app.get('/',function(request,response){
-	response.render('index')
+	response.render('index',{
+		myName: 'Huy'
+	});
 });
 
 app.get('/users',function(request,response){
