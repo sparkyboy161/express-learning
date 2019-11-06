@@ -6,7 +6,7 @@ var port = 3000;
 app.set("view engine", "pug");
 
 app.get('/',function(request,response){
-	response.send('Hello World')
+	response.render('index')
 });
 
 app.listen(port);
