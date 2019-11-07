@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('db.json');
+var db = low(adapter);
+
+db.defaults({users: [] })
+  .write()
 
 var port = 3000;
-var	users = [
-		{ id:1, name: 'Huy' },
-		{	id:2,	name: 'Lam'	}
-	];
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -19,7 +22,7 @@ app.get('/',function(req,res){
 
 app.get('/users',function(req,res){
 	res.render('users/index'
-	,{users: users});
+	,{users: db.get('users').value()});
 });
 
 	app.get('/users/search',function(req,res){
@@ -39,7 +42,7 @@ app.get('/users',function(req,res){
 	});
 
 	app.post('/users/create',function(req,res){
-		users.push(req.body);
+		db.get('users').push(req.body).write();
 		res.redirect('/users');
 	});
 
