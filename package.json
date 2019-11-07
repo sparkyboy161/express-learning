@@ -19,6 +19,7 @@
   "homepage": "https://github.com/sparkyboy161/express-learning#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "lowdb": "^1.0.0",
     "pug": "^2.0.4"
   },
   "devDependencies": {
