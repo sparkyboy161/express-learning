@@ -1,6 +1,17 @@
-h1 Create User
+extends ../template/layout
 
-form(action="/users/create", method="POST")
-  label Name 
-  input(type="Text",name="name")
-  button Create
+block content
+  h1 Create User
+  
+  if errors
+    each error in errors
+      .alert.alert-danger= error
+
+  form(action="/users/create", method="POST")
+    .form-group
+      label(for="name") Name 
+      input#name.form-control(type="Text",name="name",value= values ? values.name:"")
+    .form-group
+      label(for="phone") Name 
+      input#name.form-control(type="Text",name="phone",value= values ? values.phone:"")
+    button.btn.btn-primary Create
