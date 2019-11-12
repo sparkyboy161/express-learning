@@ -1,6 +1,9 @@
 var express = require('express');
 
 var userRoute = require('./routes/user.route');
+var authRoute = require('./routes/auth.route');
+var authRequire = require('./middlewares/auth.middleware');
+
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -21,6 +24,7 @@ app.get('/',function(req,res){
 	});
 });
 
-app.use('/users', userRoute);
+app.use('/users', authRequire.requireAuth, userRoute);
+app.use('/auth', authRoute);
 
 app.listen(port);
