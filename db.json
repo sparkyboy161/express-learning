@@ -815,5 +815,16 @@
       "description": "sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc",
       "price": 83
     }
+  ],
+  "sessions": [
+    {
+      "id": "xFxBrXqR",
+      "cart": {
+        "ee29b5d1-2e08-4896-915a-e60ca56d2e9e": 3,
+        "ff3be3bf-15dd-4665-bd58-25e327537093": 2,
+        "96d7e400-5c76-4e90-8cad-391ed308fde8": 1,
+        "fdd16979-16a4-407b-bb83-2378fea41203": 1
+      }
+    }
   ]
 }

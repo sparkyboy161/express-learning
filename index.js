@@ -3,7 +3,9 @@ var express = require('express');
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
+var cartRoute = require('./routes/cart.route');
 var authRequire = require('./middlewares/auth.middleware');
+var sessionMiddleware = require('./middlewares/session.middleware');
 
 
 var express = require('express');
@@ -17,6 +19,7 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(cookieParser("secret"));
 app.use(express.static('public'));
+app.use(sessionMiddleware);
 
 app.set("view engine", "pug");
 
@@ -29,5 +32,6 @@ app.get('/',function(req,res){
 app.use('/users', authRequire.requireAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
+app.use('/cart', cartRoute);
 
 app.listen(port);
