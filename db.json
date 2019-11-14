@@ -1,43 +1,17 @@
 {
   "users": [
     {
-      "name": "Hung",
-      "id": "M3qlFoV-"
-    },
-    {
-      "name": "Huy",
-      "id": "FLvSyTiN"
-    },
-    {
-      "name": "Huy",
-      "id": "PgF496IB"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "W3tpBqoO"
-    },
-    {
-      "name": "H",
-      "phone": "1234",
-      "id": "LD_T3MD4"
-    },
-    {
       "name": "Huy Dang",
       "phone": "1234",
-      "email": "huydang.uet.vnu@gmail.com",
-      "password": "123456",
+      "email": "huydang@gmail.com",
+      "password": "123",
       "id": "epT55qCh"
-    },
-    {
-      "name": "long",
-      "phone": "1998",
-      "id": "Fk7XJ76O"
     },
     {
       "name": "Long",
       "phone": "456",
-      "id": "PyWQ1iS7"
+      "id": "TFCtDA08",
+      "avatar": "uploads/c1f49eb4cd30c513475df439c74ebfdb"
     }
   ],
   "products": [
