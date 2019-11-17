@@ -1,4 +1,5 @@
 var express = require('express');
+var mongoose = require('mongoose');
 
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
@@ -7,6 +8,7 @@ var cartRoute = require('./routes/cart.route');
 var authRequire = require('./middlewares/auth.middleware');
 var sessionMiddleware = require('./middlewares/session.middleware');
 
+mongoose.connect('mongodb://localhost/express-demo');
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
