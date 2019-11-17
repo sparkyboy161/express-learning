@@ -5,8 +5,12 @@ var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
 var cartRoute = require('./routes/cart.route');
+var apiProductRoute = require('./api/routes/product.route');
+
 var authRequire = require('./middlewares/auth.middleware');
 var sessionMiddleware = require('./middlewares/session.middleware');
+
+
 
 mongoose.connect('mongodb://localhost/express-demo');
 
@@ -35,5 +39,6 @@ app.use('/users', authRequire.requireAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
+app.use('/api', apiProductRoute);
 
 app.listen(port);
